@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour{
     private Vector2 moveInput;
     private PlayerParticles particles;
     public  ShadowTrail dashFx;
-    public CamShake cam;
+    //public CamShake cam;
 
     [Header("Movement")]
     public float moveSpeed;
@@ -204,7 +204,7 @@ public class PlayerMovement : MonoBehaviour{
         rb.velocity += dashDirection.normalized * dashSpeed;
         StartCoroutine("StopMove");
 
-        cam.ShakeCam(0.75f ,0.4f);
+        //cam.ShakeCam(1f ,0.3f);
     }
 
     IEnumerator StopMove(){

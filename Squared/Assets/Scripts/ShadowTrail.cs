@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShadowTrail : MonoBehaviour{
 
-    public float trailDelay = 0.04f;
+    public float trailDelay = 0.02f;
     private float trailDelayTime;
     public GameObject dashTrail;
     public bool makeTrail = false;
@@ -21,7 +21,7 @@ public class ShadowTrail : MonoBehaviour{
             }else{
                 GameObject currentTrail = Instantiate(dashTrail, transform.position, transform.rotation);
                 trailDelayTime = trailDelay;
-                Destroy(currentTrail, 0.3f);
+                Destroy(currentTrail, 0.4f);
             }
         }
     }
