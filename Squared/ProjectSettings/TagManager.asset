@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Room01
   - Plank
+  - GameMaster
+  - Death
   layers:
   - Default
   - TransparentFX
