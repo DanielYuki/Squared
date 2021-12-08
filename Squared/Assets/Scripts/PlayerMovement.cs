@@ -51,6 +51,7 @@ public class PlayerMovement : MonoBehaviour{
 
     [Header("Dash")]
     private Vector2 dashDirection;
+    public bool canDash = false;
     private bool isDashing = false;
     private bool dashJump = false;
     public float dashSpeed = 25f;
@@ -112,7 +113,7 @@ public class PlayerMovement : MonoBehaviour{
         }
 
         //dash
-        if (Input.GetKeyDown(KeyCode.O) && dashCount > 0 && moveInput != Vector2.zero){
+        if (Input.GetKeyDown(KeyCode.O) && dashCount > 0 && moveInput != Vector2.zero && canDash){
             dashDirection = moveInput;
             isDashing = true;
             dashJump = true;

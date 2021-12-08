@@ -9,6 +9,7 @@ public class PlayerManager : MonoBehaviour{
     public PlayerMovement mov;
     public Animator anim;
     public float deathTime;
+    //private bool isDead;
 
     private GameMaster gm;
 
@@ -16,6 +17,8 @@ public class PlayerManager : MonoBehaviour{
         gm = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>();
         
         transform.position = gm.lastCheckPoint;
+
+        //isDead = false;
     }
 
     void OnCollisionEnter2D(Collision2D other) {
@@ -24,7 +27,13 @@ public class PlayerManager : MonoBehaviour{
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other) {
+    // void OnTriggerEnter2D(Collider2D other) {
+    //     if (other.CompareTag("Death")){
+    //         Death();
+    //     }
+    // }
+
+    void OnTriggerStay2D(Collider2D other) {
         if (other.CompareTag("Death")){
             Death();
         }
@@ -33,6 +42,7 @@ public class PlayerManager : MonoBehaviour{
     void Death(){
         StartCoroutine("DeathTimer");
         mov.canMove = false;
+        //isDead = true;
         //mov.enabled = false;
     }
 
